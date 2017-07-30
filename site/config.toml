@@ -1,4 +1,3 @@
 baseURL = "http://test.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
-publishDir = ""
