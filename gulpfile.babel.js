@@ -50,6 +50,7 @@ gulp.task('scripts', (cb) => {
 
 gulp.task('server', ['hugo', 'styles', 'scripts'], () => {
   browserSync.init({
+    open: false,
     server: {
       baseDir: './dist'
     }
