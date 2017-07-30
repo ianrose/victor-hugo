@@ -1,7 +1,10 @@
 ---
-title: "First"
-date: 2017-07-29T23:38:37-04:00
-draft: true
+title: First
+date: '2017-07-29T23:38:37-04:00'
+
 ---
 
-# hello world
+
+### hello world
+
+should not be built
