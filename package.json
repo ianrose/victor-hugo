@@ -13,7 +13,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "^6.1.2",
     "babel-loader": "^7.0.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.10.2",
@@ -23,19 +22,21 @@
     "babel-register": "^6.11.6",
     "browser-sync": "^2.13.0",
     "css-loader": "^0.28.2",
-    "eslint": "^3.1.1",
-    "eslint-plugin-import": "^1.11.1",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.11.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-postcss": "^6.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.7.1",
-    "postcss-cssnext": "^2.7.0",
-    "postcss-import": "^10.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^2.6.0",
     "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "standard": "^8.6.0"
   }
 }
