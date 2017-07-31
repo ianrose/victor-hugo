@@ -1,7 +1,9 @@
 {{ partial "header" . }}
 
-<h1>{{.Title}}</h1>
-
-{{.Content}}
+<main>
+  <h1>{{.Site.Title}}</h1>
+  <h2>{{.Site.Params.Description}}</h2>
+  <a href="/post">Post</a>
+</main>
 
 {{ partial "footer" . }}
