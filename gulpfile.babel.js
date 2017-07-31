@@ -10,7 +10,7 @@ import webpackConfig from './webpack.conf'
 
 const browserSync = BrowserSync.create()
 const hugoBin = 'hugo'
-const defaultArgs = ['--config=./site/config.toml', '-d', '../dist', '-s', 'site']
+const defaultArgs = ['--config=./site/config.toml', '--cleanDestinationDir', '-d', '../dist', '-s', 'site']
 
 gulp.task('hugo', (cb) => buildSite(cb))
 gulp.task('hugo-preview', (cb) => buildSite(cb, ['--buildDrafts', '--buildFuture']))
@@ -55,9 +55,9 @@ gulp.task('server', ['hugo', 'styles', 'scripts'], () => {
       baseDir: './dist'
     }
   })
-  gulp.watch('./src/scripts/**/*.js', ['scripts'])
-  gulp.watch('./src/styles/**/*.scss', ['styles'])
-  gulp.watch('./site/**/*', ['hugo'])
+  gulp.watch('src/scripts/**/*.js', {cwd: './'}, ['scripts'])
+  gulp.watch('src/styles/**/*.scss', {cwd: './'}, ['styles'])
+  gulp.watch('site/**/*', {cwd: './'}, ['hugo'])
 })
 
 function buildSite (cb, options) {
