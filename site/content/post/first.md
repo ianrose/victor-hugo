@@ -1,6 +1,6 @@
 ---
 title: Post Title
-date: {}
+date: 2017-07-31T21:22:59-04:00
 tags:
 - go
 - golang
