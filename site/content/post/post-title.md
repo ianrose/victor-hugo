@@ -2,8 +2,6 @@
 date = "2017-07-31T21:47:12+00:00"
 tags = ["tag1", "tag2", "tag3"]
 title = "Post Title"
-type = ""
-
 +++
 
 
