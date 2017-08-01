@@ -1,13 +1,8 @@
----
-date: {}
-tags:
-- go
-- golang
-- hugo
-- themes
-title: Post Title
-
----
++++
+date = "2017-07-31T21:24:46+00:00"
+tags = ["go", "golang", "themes", "hugo"]
+title = Post Title
++++
 
 
 ## Introduction
