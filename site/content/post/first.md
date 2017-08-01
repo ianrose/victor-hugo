@@ -1,8 +1,13 @@
-+++
-date = "2017-07-31T21:24:46+00:00"
-tags = ["go", "golang", "themes", "hugo"]
-title = "Post Title"
-+++
+---
+date: {}
+tags:
+- go
+- golang
+- hugo
+- themes
+title: Post Title
+
+---
 
 
 ## Introduction
@@ -48,7 +53,7 @@ There are a few concepts that you need to understand before creating a theme.
 
 ### Skins
 
-Skins are the files responsible for the look and feel of your site. It’s the CSS that controls colors and fonts, it’s the Javascript that determines actions and reactions. It’s also the rules that Hugo uses to transform your content into the HTML that the site will serve to visitors.
+Skins are the files responsible for the look and feel of your site. It’s the CSS that controls colors and fonts, it’s the Javascript that determines actions and reactions. It’s also the rules that [Hugo](https://gohugo.io/) uses to transform your content into the HTML that the site will serve to visitors.
 
 You have two ways to create a skin. The simplest way is to create it in the `layouts/` directory. If you do, then you don’t have to worry about configuring Hugo to recognize it. The first place that Hugo will look for rules and files is in the `layouts/` directory so it will always find the skin.
 
@@ -507,12 +512,12 @@ Right now, that page is empty because we don't have any content and we don't hav
 
 ```
 $ vi themes/zafta/layouts/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;p&gt;hugo says hello!&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;p&amp;gt;hugo says hello!&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 :wq
 
 $
@@ -538,11 +543,11 @@ $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  78 Sep 29 21:26 public/index.html
 
 $ cat public/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;p&gt;hugo says hello!&lt;/p&gt;
-&lt;/html&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;p&amp;gt;hugo says hello!&amp;lt;/p&amp;gt;
+&amp;lt;/html&amp;gt;
 
 ```
 
@@ -552,15 +557,15 @@ Note: If you're running the server with the `--watch` option, you'll see differe
 
 ```
 $ cat public/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;p&gt;hugo says hello!&lt;/p&gt;
-&lt;script&gt;document.write('&lt;script src="http://'
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;p&amp;gt;hugo says hello!&amp;lt;/p&amp;gt;
+&amp;lt;script&amp;gt;document.write('&amp;lt;script src="http://'
         + (location.host || 'localhost').split(':')[0]
-    + ':1313/livereload.js?mindelay=10"&gt;&lt;/'
-        + 'script&gt;')&lt;/script&gt;&lt;/body&gt;
-&lt;/html&gt;
+    + ':1313/livereload.js?mindelay=10"&amp;gt;&amp;lt;/'
+        + 'script&amp;gt;')&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 
 ```
 
@@ -581,7 +586,7 @@ $ hugo --verbose new post/first.md
 INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
 INFO: 2014/09/29 attempting to create  post/first.md of post
 INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/default.md
-ERROR: 2014/09/29 Unable to Cast &lt;nil&gt; to map[string]interface{}
+ERROR: 2014/09/29 Unable to Cast &amp;lt;nil&amp;gt; to map[string]interface{}
 
 $
 
@@ -697,14 +702,14 @@ The home page will contain a list of posts. Let's update its template to add the
 
 ```
 $ vi themes/zafta/layouts/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
   {{ range first 10 .Data.Pages }}
-    &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
   {{ end }}
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 :wq
 
 $
@@ -749,16 +754,16 @@ $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/index.html
 -rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/second/index.html
 $ cat public/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
 
-    &lt;h1&gt;second&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;second&amp;lt;/h1&amp;gt;
 
-    &lt;h1&gt;first&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;first&amp;lt;/h1&amp;gt;
 
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 $
 
 ```
@@ -791,16 +796,16 @@ Please see the Hugo documentation on template rendering for all the details on d
 
 ```
 $ vi themes/zafta/layouts/_default/single.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;{{ .Title }}&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
   {{ .Content }}
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 :wq
 
 $
@@ -831,30 +836,30 @@ $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  128 Sep 29 22:40 public/post/second/index.html
 
 $ cat public/post/first/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;first&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;first&lt;/h1&gt;
-  &lt;p&gt;my first post&lt;/p&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;first&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;first&amp;lt;/h1&amp;gt;
+  &amp;lt;p&amp;gt;my first post&amp;lt;/p&amp;gt;
 
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 
 $ cat public/post/second/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;second&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;second&lt;/h1&gt;
-  &lt;p&gt;my second post&lt;/p&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;second&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;second&amp;lt;/h1&amp;gt;
+  &amp;lt;p&amp;gt;my second post&amp;lt;/p&amp;gt;
 
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 $
 
 ```
@@ -867,14 +872,14 @@ The posts are on the home page. Let's add a link from there to the post. Since t
 
 ```
 $ vi themes/zafta/layouts/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
   {{ range first 10 .Data.Pages }}
-    &lt;h1&gt;&lt;a href="{{ .Permalink }}"&gt;{{ .Title }}&lt;/a&gt;&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="{{ .Permalink }}"&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
   {{ end }}
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 
 ```
 
@@ -902,16 +907,16 @@ $ find public -type f -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  128 Sep 29 22:44 public/post/second/index.html
 
 $ cat public/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
 
-    &lt;h1&gt;&lt;a href="/post/second/"&gt;second&lt;/a&gt;&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="/post/second/"&amp;gt;second&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
 
-    &lt;h1&gt;&lt;a href="/post/first/"&gt;first&lt;/a&gt;&lt;/h1&gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="/post/first/"&amp;gt;first&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
 
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 
 $
 
@@ -971,18 +976,18 @@ One other thing. Take a look at the home page.
 
 ```
 $ cat public/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;&lt;a href="http://localhost:1313/post/theme/"&gt;creating a new theme&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href="http://localhost:1313/about-time/"&gt;about&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href="http://localhost:1313/post/second-post/"&gt;second&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href="http://localhost:1313/post/first-post/"&gt;first&lt;/a&gt;&lt;/h1&gt;
-&lt;script&gt;document.write('&lt;script src="http://'
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="http://localhost:1313/post/theme/"&amp;gt;creating a new theme&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="http://localhost:1313/about-time/"&amp;gt;about&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="http://localhost:1313/post/second-post/"&amp;gt;second&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;lt;a href="http://localhost:1313/post/first-post/"&amp;gt;first&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+&amp;lt;script&amp;gt;document.write('&amp;lt;script src="http://'
         + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"&gt;&lt;/'
-        + 'script&gt;')&lt;/script&gt;&lt;/body&gt;
-&lt;/html&gt;
+		+ ':1313/livereload.js?mindelay=10"&amp;gt;&amp;lt;/'
+        + 'script&amp;gt;')&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 
 ```
 
@@ -990,24 +995,24 @@ Notice that the "about" link is listed with the posts? That's not desirable, so 
 
 ```
 $ vi themes/zafta/layouts/index.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;h1&gt;posts&lt;/h1&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;posts&amp;lt;/h1&amp;gt;
   {{ range first 10 .Data.Pages }}
     {{ if eq .Type "post"}}
-      &lt;h2&gt;&lt;a href="{{ .Permalink }}"&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+      &amp;lt;h2&amp;gt;&amp;lt;a href="{{ .Permalink }}"&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
     {{ end }}
   {{ end }}
 
-  &lt;h1&gt;pages&lt;/h1&gt;
+  &amp;lt;h1&amp;gt;pages&amp;lt;/h1&amp;gt;
   {{ range .Data.Pages }}
     {{ if eq .Type "page" }}
-      &lt;h2&gt;&lt;a href="{{ .Permalink }}"&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+      &amp;lt;h2&amp;gt;&amp;lt;a href="{{ .Permalink }}"&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
     {{ end }}
   {{ end }}
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 :wq
 
 ```
@@ -1050,17 +1055,17 @@ In Hugo, a partial is a sugar-coated template. Normally a template reference has
 
 ```
 $ vi themes/zafta/layouts/partials/header.html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-	&lt;title&gt;{{ .Title }}&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+	&amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
 :wq
 
 $ vi themes/zafta/layouts/partials/footer.html
-&lt;/body&gt;
-&lt;/html&gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 :wq
 
 ```
@@ -1089,17 +1094,17 @@ Let's change the home page template to use these new partials.
 $ vi themes/zafta/layouts/index.html
 {{ partial "header.html" . }}
 
-  &lt;h1&gt;posts&lt;/h1&gt;
+  &amp;lt;h1&amp;gt;posts&amp;lt;/h1&amp;gt;
   {{ range first 10 .Data.Pages }}
     {{ if eq .Type "post"}}
-      &lt;h2&gt;&lt;a href="{{ .Permalink }}"&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+      &amp;lt;h2&amp;gt;&amp;lt;a href="{{ .Permalink }}"&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
     {{ end }}
   {{ end }}
 
-  &lt;h1&gt;pages&lt;/h1&gt;
+  &amp;lt;h1&amp;gt;pages&amp;lt;/h1&amp;gt;
   {{ range .Data.Pages }}
     {{ if or (eq .Type "page") (eq .Type "about") }}
-      &lt;h2&gt;&lt;a href="{{ .Permalink }}"&gt;{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}&lt;/a&gt;&lt;/h2&gt;
+      &amp;lt;h2&amp;gt;&amp;lt;a href="{{ .Permalink }}"&amp;gt;{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
     {{ end }}
   {{ end }}
 
@@ -1116,7 +1121,7 @@ Generate the web site and verify the results. The title on the home page is now 
 $ vi themes/zafta/layouts/_default/single.html
 {{ partial "header.html" . }}
 
-  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
   {{ .Content }}
 
 {{ partial "footer.html" . }}
@@ -1145,8 +1150,8 @@ Posts use the default single template, so we'll change that file.
 $ vi themes/zafta/layouts/_default/single.html
 {{ partial "header.html" . }}
 
-  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
-  &lt;h2&gt;{{ .Date.Format "Mon, Jan 2, 2006" }}&lt;/h2&gt;
+  &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+  &amp;lt;h2&amp;gt;{{ .Date.Format "Mon, Jan 2, 2006" }}&amp;lt;/h2&amp;gt;
   {{ .Content }}
 
 {{ partial "footer.html" . }}
@@ -1169,7 +1174,7 @@ $ mkdir themes/zafta/layouts/post
 $ vi themes/zafta/layouts/_default/single.html
 {{ partial "header.html" . }}
 
-  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
   {{ .Content }}
 
 {{ partial "footer.html" . }}
@@ -1183,8 +1188,8 @@ Now we'll update the post's version of the single template. If you remember Hugo
 $ vi themes/zafta/layouts/post/single.html
 {{ partial "header.html" . }}
 
-  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
-  &lt;h2&gt;{{ .Date.Format "Mon, Jan 2, 2006" }}&lt;/h2&gt;
+  &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+  &amp;lt;h2&amp;gt;{{ .Date.Format "Mon, Jan 2, 2006" }}&amp;lt;/h2&amp;gt;
   {{ .Content }}
 
 {{ partial "footer.html" . }}
