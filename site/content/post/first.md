@@ -1,11 +1,11 @@
 ---
-title: Post Title
-date: 2017-07-31T21:22:59-04:00
+date: {}
 tags:
 - go
 - golang
 - hugo
 - themes
+title: Post Title
 
 ---
 
